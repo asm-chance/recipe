@@ -9,6 +9,12 @@ import { RecipeItem } from './recipes/recipe-list/recipe-item/recipe-item';
 import { ShoppingList } from './shopping-list/shopping-list';
 import { ShoppingEdit } from './shopping-list/shopping-edit/shopping-edit';
 import { RecipeDetail } from './recipes/recipe-detail/recipe-detail';
+import { FormsModule } from '@angular/forms';
+import { Dropdown } from './shared/dropdown';
+import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { AppRoutingModule } from './app-routing.module';
+import { RecipeStart } from './recipes/recipe-start/recipe-start';
+import { RecipeEdit } from './recipes/recipe-edit/recipe-edit';
 
 @NgModule({
   declarations: [
@@ -20,9 +26,12 @@ import { RecipeDetail } from './recipes/recipe-detail/recipe-detail';
     ShoppingList,
     ShoppingEdit,
     RecipeDetail,
+    Dropdown,
+    RecipeStart,
+    RecipeEdit,
   ],
-  imports: [BrowserModule],
-  providers: [provideBrowserGlobalErrorListeners()],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  providers: [provideBrowserGlobalErrorListeners(), ShoppingListService],
   bootstrap: [App],
 })
 export class AppModule {}
